@@ -1,13 +1,26 @@
 <template>
-	<div>
-		<h1>{{ msg }}</h1>
+	<div class="container">
+		<HospitalTop />
+    <div class="content">
+      <router-view></router-view>
+    </div>
+    <HospitalBottom />
 	</div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 
-const msg = ref("app");
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .content{
+    margin-top: 80px;
+    width: 1200px;
+    min-height:1100px;
+  }
+}
+</style>
